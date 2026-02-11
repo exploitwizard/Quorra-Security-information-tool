@@ -19,7 +19,7 @@ def run_command(cmd, check=True):
         return False
 
 def main():
-    print("🔧 Installing Quorra SIEM Tool...")
+    print(" Installing Quorra SIEM Tool...")
     print("=" * 50)
     
     # Check Python version
