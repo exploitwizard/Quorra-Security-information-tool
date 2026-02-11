@@ -15,7 +15,7 @@ def run_command(cmd, check=True):
         subprocess.run(cmd, shell=True, check=check)
         return True
     except subprocess.CalledProcessError as e:
-        print(f"❌ Command failed: {e}")
+        print(f"Command failed: {e}")
         return False
 
 def main():
@@ -25,10 +25,10 @@ def main():
     # Check Python version
     python_version = sys.version_info
     if python_version.major < 3 or (python_version.major == 3 and python_version.minor < 8):
-        print(f"❌ Error: Python 3.8+ required. Found Python {python_version.major}.{python_version.minor}")
+        print(f"Error: Python 3.8+ required. Found Python {python_version.major}.{python_version.minor}")
         sys.exit(1)
     
-    print(f"✅ Python {python_version.major}.{python_version.minor}.{python_version.micro} detected")
+    print(f"Python {python_version.major}.{python_version.minor}.{python_version.micro} detected")
     
     # Create necessary directories
     print("\n📁 Creating directories...")
@@ -38,10 +38,10 @@ def main():
     
     # Create virtual environment
     if not os.path.exists("venv"):
-        print("\n📦 Creating virtual environment...")
+        print("\n Creating virtual environment...")
         run_command("python -m venv venv")
     else:
-        print("\n📦 Virtual environment already exists")
+        print("\n Virtual environment already exists")
     
     # Determine activation command
     if os.name == 'nt':  # Windows
@@ -70,15 +70,15 @@ def main():
     run_command(f"{python_cmd} -c \"from app.database import db; from app import app; with app.app_context(): db.create_all()\"")
     
     print("\n" + "=" * 50)
-    print("✅ Installation complete!")
-    print("\n📋 To start Quorra SIEM:")
+    print("Installation complete!")
+    print("\n To start Quorra SIEM:")
     print("   1. First start Block Fortress on port 5000")
     print("   2. Run: quorra")
-    print("\n🔐 Login Credentials:")
+    print("\n Login Credentials:")
     print("   Username: user-quorra")
     print("   Password: quorra@1000")
-    print("\n🌐 Login page will be available at: http://localhost:5001/login")
-    print("\n🛠️  Troubleshooting:")
+    print("\n Login page will be available at: http://localhost:5001/login")
+    print("\n  Troubleshooting:")
     print("   - Make sure port 5001 is available")
     print("   - Check if Block Fortress is running on port 5000")
     print("   - If login fails, check the database in data/quorra.db")
