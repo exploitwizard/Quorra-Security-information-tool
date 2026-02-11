@@ -18,7 +18,7 @@ class RulesEngine:
             self.geoip_reader = geoip2.database.Reader('data/geolite/GeoLite2-City.mmdb')
         except:
             self.geoip_reader = None
-            print("⚠️  GeoIP database not found. Geo-velocity rule will be disabled.")
+            print("GeoIP database not found. Geo-velocity rule will be disabled.")
     
     def check_rules(self, log_entry):
         """Check all rules against a log entry."""
