@@ -63,8 +63,8 @@ def main():
     # Print the URL for easy access
     url = f"http://localhost:{port}"
     print(f"\n Quorra is running!")
-    print(f"🔗 Open your browser and visit: {url}")
-    print(f"📋 Copy this link: {url}")
+    print(f" Open your browser and visit: {url}")
+    print(f" Copy this link: {url}")
     
     # Ask if user wants to open browser automatically
     response = input("\n Open in browser now? (y/n): ").strip().lower()
