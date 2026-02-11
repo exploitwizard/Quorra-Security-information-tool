@@ -25,7 +25,7 @@ def find_free_port(start_port=5001, max_port=5010):
 
 def signal_handler(sig, frame):
     """Handle Ctrl+C gracefully."""
-    print("\n\n👋 Shutting down Quorra SIEM...")
+    print("\n\n Shutting down Quorra SIEM...")
     sys.exit(0)
 
 def main():
@@ -52,9 +52,9 @@ def main():
     # Find a free port
     port = find_free_port()
     
-    print(f"🚀 Starting Quorra SIEM on port {port}...")
-    print("📊 Connecting to Block Fortress on port 5000...")
-    print("🔍 Initializing security monitoring...")
+    print(f" Starting Quorra SIEM on port {port}...")
+    print(" Connecting to Block Fortress on port 5000...")
+    print(" Initializing security monitoring...")
     
     # Set environment variables
     os.environ['QUORRA_PORT'] = str(port)
@@ -62,24 +62,24 @@ def main():
     
     # Print the URL for easy access
     url = f"http://localhost:{port}"
-    print(f"\n✅ Quorra is running!")
+    print(f"\n Quorra is running!")
     print(f"🔗 Open your browser and visit: {url}")
     print(f"📋 Copy this link: {url}")
     
     # Ask if user wants to open browser automatically
-    response = input("\n🌐 Open in browser now? (y/n): ").strip().lower()
+    response = input("\n Open in browser now? (y/n): ").strip().lower()
     if response in ['y', 'yes', '']:
         webbrowser.open(url)
     
-    print("\n📡 Monitoring Block Fortress security logs...")
-    print("🎯 Detection Rules Active:")
+    print("\n Monitoring Block Fortress security logs...")
+    print(" Detection Rules Active:")
     print("  1. Brute Force (10 failed logins in 2 mins)")
     print("  2. Geo-velocity (same user, different countries)")
     print("  3. Admin privilege escalation")
     print("  4. OS Command Injection")
     print("  5. Blocked IP detection")
     
-    print("\n🛑 Press Ctrl+C to stop Quorra\n")
+    print("\n Press Ctrl+C to stop Quorra\n")
     
     # Run the application
     app.run(host='0.0.0.0', port=port, debug=True, use_reloader=False)
