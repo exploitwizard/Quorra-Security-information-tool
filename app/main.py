@@ -153,7 +153,7 @@ def connect_websocket():
 
 Thread(target=connect_websocket, daemon=True).start()
 
-print("✅ Quorra SIEM running")
+print("Quorra SIEM running")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
